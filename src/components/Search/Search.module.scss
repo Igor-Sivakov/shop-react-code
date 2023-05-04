@@ -1,0 +1,42 @@
+.container {
+  display: flex;
+  position: relative;
+  margin: 10px 10px;
+
+  .searchIcon {
+    width: 22px;
+    opacity: 0.2;
+    margin-right: 10px;
+    position: absolute;
+    top: 12px;
+    left: 14px;
+    color: inherit;
+  }
+
+  input {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 12px 20px 12px 42px;
+    width: 300px;
+    border-radius: 8px;
+    font-size: 16px;
+    color: inherit;
+    transition: all 0.2s ease-in-out;
+
+    &:focus {
+      border: 1px solid rgba(0, 0, 0, 0.2);
+    }
+  }
+  .clearIcon {
+    width: 18px;
+    opacity: 0.3;
+    position: absolute;
+    top: 8px;
+    left: 330px;
+    color: inherit;
+    cursor: pointer;
+    &:hover {
+      opacity: 0.8;
+      fill: rgb(218, 1, 1);
+    }
+  }
+}

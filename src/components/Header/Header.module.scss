@@ -1,0 +1,48 @@
+@import '../../scss/variables';
+
+.header {
+  border-bottom: 1px solid $gray-line;
+  padding: 50px 70px 30px 70px;
+
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @media (max-width: 990px) {
+      flex-direction: column;
+    }
+  }
+
+  &__logo {
+    text-decoration: none;
+    display: flex;
+    align-items: end;
+    color: inherit;
+    line-height: 1.2;
+
+    @media (max-width: 990px) {
+      flex-direction: column;
+      text-align: center;
+      align-items: center;
+    }
+
+    img {
+      width: 80px;
+      margin-top: -25px;
+    }
+
+    h1 {
+      color: inherit;
+      font-size: 24px;
+      letter-spacing: 1%;
+      text-transform: uppercase;
+      font-weight: 800;
+    }
+
+    p {
+      color: #7b7b7b;
+      width: 190px;
+    }
+  }
+}

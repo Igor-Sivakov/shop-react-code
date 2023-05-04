@@ -1,0 +1,67 @@
+@import '../../../scss/variables';
+
+.cart {
+  &__bottom {
+    margin: 50px 0;
+
+    &_details {
+      display: flex;
+      justify-content: space-between;
+
+      span {
+        font-size: 22px;
+
+        &:last-of-type {
+          b {
+            color: $mainColor;
+          }
+        }
+      }
+    }
+
+    &_buttons {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 40px;
+
+      .go_back_btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 210px;
+
+        border-color: darken($color: $gray-line, $amount: 10);
+
+        span {
+          color: darken($color: $gray-line, $amount: 20);
+          font-weight: 500;
+          font-weight: 600;
+        }
+
+        &:hover {
+          background-color: lighten($color: $black, $amount: 10);
+          border-color: lighten($color: $black, $amount: 10);
+
+          span {
+            color: $gray-line;
+          }
+        }
+
+        svg {
+          margin-right: 12px;
+          path {
+            fill: transparent;
+            stroke-width: 2;
+          }
+        }
+      }
+
+      .pay_btn {
+        font-size: 16px;
+        font-weight: 600;
+        width: 210px;
+        padding: 16px;
+      }
+    }
+  }
+}

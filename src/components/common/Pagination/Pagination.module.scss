@@ -1,0 +1,35 @@
+@import '../../../scss/variables';
+
+.paginate {
+  display: flex;
+
+  li {
+    a {
+      display: inline-block;
+      text-align: center;
+      line-height: 20px;
+      width: 20px;
+      height: 20px;
+      padding: 10px;
+      cursor: pointer;
+      color: $mainColor;
+      border: 1px solid $mainColor;
+      border-radius: 30px;
+      margin: 0px 5px;
+
+      &:hover {
+        background-color: $mainColor;
+        color: #fff;
+      }
+    }
+  }
+
+  :global {
+    .selected {
+      a {
+        background-color: $mainColor;
+        color: #fff;
+      }
+    }
+  }
+}
