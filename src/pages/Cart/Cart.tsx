@@ -1,16 +1,20 @@
 import { FC } from 'react'
 import cn from 'classnames'
+
+import { useAppSelector } from '../../types/types'
+
 import {
   getCartItemsSelect,
   getTotalPriceSelect,
 } from '../../redux/selectors/selectors'
-import { useAppSelector } from '../../types/types'
+
 import {
   CartItem,
   TopSegment,
   BottomSegment,
   EmptyCart,
 } from '../../components'
+
 import styles from './Cart.module.scss'
 
 const Cart: FC = () => {

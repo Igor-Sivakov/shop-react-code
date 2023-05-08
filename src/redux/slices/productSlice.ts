@@ -1,6 +1,7 @@
 import { createAsyncThunk, createSlice, isAnyOf, PayloadAction } from "@reduxjs/toolkit"
-import { SortPropertyEnum } from './filterSlice'
+
 import { mainAPI, ResponseAPIProductsType } from '../../API/API'
+import { SortPropertyEnum } from './filterSlice'
 
 
 export enum StatusEnum {

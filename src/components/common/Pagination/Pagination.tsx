@@ -1,7 +1,10 @@
 import { FC } from 'react'
 import ReactPaginate from 'react-paginate'
-import { setCurrentPage } from '../../../redux/slices/filterSlice'
+
 import { useAppDispatch } from '../../../types/types'
+
+import { setCurrentPage } from '../../../redux/slices/filterSlice'
+
 import styles from './Pagination.module.scss'
 
 type PropsType = {

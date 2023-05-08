@@ -1,11 +1,14 @@
 import { FC } from 'react'
 import { NavLink } from 'react-router-dom'
 import cn from 'classnames'
+
+import { useAppSelector } from '../../../types/types'
+
 import {
   getTotalCountItemsSelect,
   getTotalPriceSelect,
 } from '../../../redux/selectors/selectors'
-import { useAppSelector } from '../../../types/types'
+
 import styles from './BottomSegment.module.scss'
 import '../../../scss/_button.scss'
 
@@ -23,6 +26,7 @@ export const BottomSegment: FC = () => {
           Total price: <b>{totalPrice} $</b>
         </span>
       </div>
+
       <div className={styles.cart__bottom_buttons}>
         <NavLink
           to='/'
@@ -49,6 +53,7 @@ export const BottomSegment: FC = () => {
 
           <span>Go back</span>
         </NavLink>
+
         <div className={cn(styles.pay_btn, 'button')}>
           <span>Pay now</span>
         </div>

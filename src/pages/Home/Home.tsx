@@ -1,11 +1,15 @@
 import { FC, memo, useEffect, useRef } from 'react'
 import qs from 'qs'
+
 import { useNavigate } from 'react-router-dom'
+import { useAppDispatch, useAppSelector } from '../../types/types'
+
 import { setFilters, SortPropertyEnum } from '../../redux/slices/filterSlice'
 import {
   fetchProducts,
   fetchProductsByCategoryAndSortProperty,
 } from '../../redux/slices/productSlice'
+
 import {
   getCategoryIdSelect,
   getCurrentPageSelect,
@@ -14,7 +18,7 @@ import {
   getSearchValueSelect,
   getSortTypeSelect,
 } from '../../redux/selectors/selectors'
-import { useAppDispatch, useAppSelector } from '../../types/types'
+
 import {
   Pagination,
   SortPopup,
@@ -23,6 +27,7 @@ import {
   ItemBlock,
   ItemBlockSkeleton,
 } from '../../components'
+
 import styles from './Home.module.scss'
 
 export const Home: FC = memo(() => {
@@ -33,7 +38,7 @@ export const Home: FC = memo(() => {
   const { sortProperty } = useAppSelector(getSortTypeSelect)
   const isLoading = useAppSelector(getProductsStatusSelect)
   const isSearch = useRef(false)
-  const isMaunted = useRef(false)
+  const isMounted = useRef(false)
 
   const navigate = useNavigate()
 
@@ -52,7 +57,7 @@ export const Home: FC = memo(() => {
 
   //if the parameters were changed and there was a first render
   useEffect(() => {
-    if (isMaunted.current) {
+    if (isMounted.current) {
       const queryString = qs.stringify({
         categoryId,
         sortProperty,
@@ -60,7 +65,7 @@ export const Home: FC = memo(() => {
       })
       navigate(`?${queryString}`)
     }
-    isMaunted.current = true
+    isMounted.current = true
   }, [categoryId, sortProperty, currentPage, navigate])
 
   //if there was a first render, then check the parameters and save in redux
@@ -84,7 +89,7 @@ export const Home: FC = memo(() => {
     }
   }, [dispatch])
 
-  //if there was a first render, then we request items by parametrs
+  //if there was a first render, then we request items by parameters
   useEffect(() => {
     if (!isSearch.current) {
       fetchByCategoryAndSort()
@@ -106,7 +111,9 @@ export const Home: FC = memo(() => {
         <Categories />
         <SortPopup />
       </div>
+
       <h2 className={styles.content__title}>All vapes</h2>
+
       {isLoading === 'error' ? (
         <div className={styles.error_info}>
           Ups, somthing went wrong
@@ -122,6 +129,7 @@ export const Home: FC = memo(() => {
             : items.map((items) => <ItemBlock key={items.id} {...items} />)}
         </div>
       )}
+
       <div className={styles.pagination}>
         <Pagination currentPage={currentPage} />
       </div>

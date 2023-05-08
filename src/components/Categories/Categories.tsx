@@ -1,7 +1,10 @@
 import { FC, memo } from 'react'
+
+import { useAppDispatch, useAppSelector } from '../../types/types'
+
 import { setCategoryId, setCurrentPage } from '../../redux/slices/filterSlice'
 import { getCategoryIdSelect } from '../../redux/selectors/selectors'
-import { useAppDispatch, useAppSelector } from '../../types/types'
+
 import styles from './Categories.module.scss'
 
 export const Categories: FC = memo(() => {

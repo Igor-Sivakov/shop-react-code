@@ -1,8 +1,12 @@
 import { FC, memo, useEffect, useRef, useState } from 'react'
+
+import { useAppDispatch, useAppSelector } from '../../types/types'
+
 import { setSortType, SortPropertyEnum } from '../../redux/slices/filterSlice'
 import { SortValue } from '../../redux/slices/filterSlice'
+
 import { getSortTypeSelect } from '../../redux/selectors/selectors'
-import { useAppDispatch, useAppSelector } from '../../types/types'
+
 import styles from './SortPopup.module.scss'
 
 export const sortList: SortValue[] = [
@@ -58,6 +62,7 @@ export const SortPopup: FC = memo(() => {
         <b>Sort by:</b>
         <span onClick={() => setIsOpen(!isOpen)}>{value.name}</span>
       </div>
+
       {isOpen && (
         <div className={styles.sort__popup}>
           <ul>

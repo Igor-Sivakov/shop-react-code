@@ -13,6 +13,7 @@ export const NotFound: FC = () => {
         <br />
         Not found
       </h1>
+
       <p>Unfortunately, this page is not available in our online-store.</p>
     </div>
   )

@@ -1,9 +1,13 @@
 import { FC, memo, useState } from 'react'
 import { Link } from 'react-router-dom'
+
 import plugImg from '../../assets/img/plugVape.webp'
+
+import { useAppDispatch, useAppSelector } from '../../types/types'
+
 import { addItemsToCart, CartItemType } from '../../redux/slices/cartSlice'
 import { getCartItemsSelect } from '../../redux/selectors/selectors'
-import { useAppDispatch, useAppSelector } from '../../types/types'
+
 import styles from './ItemBlock.module.scss'
 import '../../scss/_button.scss'
 
@@ -56,6 +60,7 @@ export const ItemBlock: FC<PropsType> = memo(
             />
             <h4 className={styles.item_block__title}>{title}</h4>
           </Link>
+
           <div className={styles.item_block__selector}>
             <ul>
               {types.map((type, i) => (
@@ -68,6 +73,7 @@ export const ItemBlock: FC<PropsType> = memo(
                 </li>
               ))}
             </ul>
+
             <ul>
               {sizes.map((size, i) => (
                 <li
@@ -80,8 +86,10 @@ export const ItemBlock: FC<PropsType> = memo(
               ))}
             </ul>
           </div>
+
           <div className={styles.item_block__bottom}>
             <div className={styles.item_block__price}>from {price} $</div>
+
             <button
               onClick={addOnClick}
               className='button button--outline button--add'

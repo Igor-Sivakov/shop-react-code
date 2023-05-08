@@ -1,13 +1,18 @@
 import { FC, useEffect, useRef } from 'react'
 import { Link, useLocation } from 'react-router-dom'
+
 import vapeLogo from '../../assets/img/vapeLogo.jpeg'
+
+import { useAppSelector } from '../../types/types'
+
 import {
   getTotalCountItemsSelect,
   getTotalPriceSelect,
   getCartItemsSelect,
 } from '../../redux/selectors/selectors'
-import { useAppSelector } from '../../types/types'
+
 import { Search } from '..'
+
 import styles from './Header.module.scss'
 import './../../scss/_button.scss'
 
@@ -40,9 +45,11 @@ export const Header: FC<PropsType> = () => {
             <p>Best vapes on best price</p>
           </div>
         </Link>
+
         {location.pathname !== '/cart' && (
           <>
             <Search />
+
             <div className={styles.header__cart}>
               <Link to='/cart' className='button button--cart'>
                 <span>{totalPrice} $</span>
@@ -76,6 +83,7 @@ export const Header: FC<PropsType> = () => {
                     strokeLinejoin='round'
                   />
                 </svg>
+
                 <span>{totalItemsCount}</span>
               </Link>
             </div>

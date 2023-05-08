@@ -1,5 +1,6 @@
 import { FC, lazy, Suspense } from 'react'
 import { Route, Routes } from 'react-router-dom'
+
 import { MainLayout } from './layouts/MainLayout'
 import { Home } from './pages/Home/Home'
 import { NotFound } from './pages/ NotFound/ NotFound'

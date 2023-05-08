@@ -47,8 +47,3 @@ export const mainAPI = {
   }
 }
 
-/* 
-const category = categoryId !== 0 ? `&category=${categoryId}` : ''
-const value = searchValue ? `&search=${searchValue}` : ''
-instance.get<ResponseAPIProductsType[]>(`items?page=${currentPage}&limit=8${category}&sortBy=${sortBy}&order=${order}${value}`).then((res) => res.data)
-*/

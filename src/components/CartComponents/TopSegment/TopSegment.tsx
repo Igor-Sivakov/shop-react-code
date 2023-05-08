@@ -1,6 +1,9 @@
 import { FC } from 'react'
-import { clearItemsCart } from '../../../redux/slices/cartSlice'
+
 import { useAppDispatch } from '../../../types/types'
+
+import { clearItemsCart } from '../../../redux/slices/cartSlice'
+
 import styles from './TopSegment.module.scss'
 
 export const TopSegment: FC = () => {
@@ -45,6 +48,7 @@ export const TopSegment: FC = () => {
         </svg>
         Cart
       </h2>
+
       <div onClick={onClickClearCart} className={styles.cart__clear}>
         <svg
           width='20'

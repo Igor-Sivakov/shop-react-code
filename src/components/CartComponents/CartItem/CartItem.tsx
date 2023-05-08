@@ -1,13 +1,17 @@
 import { FC } from 'react'
 import cn from 'classnames'
+
 import plugImg from '../../../assets/img/plugVape.webp'
+
+import { useAppDispatch } from '../../../types/types'
+
 import {
   addItemsToCart,
   CartItemType,
   minusItem,
   removeItemsFromCart,
 } from '../../../redux/slices/cartSlice'
-import { useAppDispatch } from '../../../types/types'
+
 import styles from './CartItem.module.scss'
 import '../../../scss/_button.scss'
 
@@ -52,12 +56,14 @@ export const CartItem: FC<PropsType> = ({
         <div className={styles.cart__item__img}>
           <img src={imageUrl ? imageUrl : plugImg} alt='Pizza' />
         </div>
+
         <div className={styles.cart__item__info}>
           <h3>{title}</h3>
           <p>
             Nicotine {type}, {size} pfs.
           </p>
         </div>
+
         <div className={styles.cart__item__count}>
           <button
             onClick={onClickMinus}
@@ -83,7 +89,9 @@ export const CartItem: FC<PropsType> = ({
               />
             </svg>
           </button>
+
           <b>{count}</b>
+
           <button
             onClick={onClickPlus}
             className={cn(
@@ -109,9 +117,11 @@ export const CartItem: FC<PropsType> = ({
             </svg>
           </button>
         </div>
+
         <div className={styles.cart__item__price}>
           <b>{price * count} $</b>
         </div>
+
         <div onClick={onClickRemove} className={cn(styles.cart__item__remove)}>
           <button
             className={cn(

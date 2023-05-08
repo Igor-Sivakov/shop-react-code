@@ -1,4 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
+
 import { calcTotalPrice } from './../../utils/calcTotalPrice'
 import { getCartFromLS } from '../../utils/getCartFromLS'
 import { calcTotalCount } from '../../utils/calcTotalCount'

@@ -1,6 +1,8 @@
 import { FC } from 'react'
+
 import { Outlet } from 'react-router-dom'
 import { Header } from '../components'
+
 import styles from './MainLayout.module.scss'
 
 export const MainLayout: FC = () => {

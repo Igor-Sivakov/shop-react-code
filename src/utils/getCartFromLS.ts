@@ -1,4 +1,5 @@
 import { CartItemType } from '../redux/slices/cartSlice'
+
 import { calcTotalCount } from './calcTotalCount'
 import { calcTotalPrice } from './calcTotalPrice'
 
